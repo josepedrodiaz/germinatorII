@@ -32,3 +32,8 @@ Let people know how they can dive into the project, include important links to t
 ## License
 
 Licencia GPL.
+
+
+## ToDo
+* Conected/Alive Led
+*
