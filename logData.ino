@@ -17,7 +17,7 @@ bool logData(String data, char* mod){
   
     Serial.println("====== Writing to SPIFFS file ========="); // Serial info   
     f.println(data);//write data to file
-    Serial.println("Escrito: " + data); // Serial info
+    Serial.println("Logged Data: " + data); // Serial info
     
   }else if (mod == "R"){
      
@@ -26,7 +26,7 @@ bool logData(String data, char* mod){
          * Señal visible (parpadea Led)
          */
         for(int i = 10; i > 0; i--){
-          guiniaLed(1,i*10);
+          guiniaLed(1,i*10, infoLed);
           }
   
         // write i strings to Serial
@@ -46,7 +46,7 @@ bool logData(String data, char* mod){
          * Señal visible (parpadea Led)
          */
         for(int i = 10; i > 0; i--){
-          guiniaLed(1,i*10);
+          guiniaLed(1,i*10, infoLed);
           }
         
       

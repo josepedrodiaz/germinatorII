@@ -1,4 +1,4 @@
-/******************** TEMPERATURA ************************************************/
+/******************** Sensor de TEMPERATURA ************************************************/
 /* Variables usadas por la siguiente función getTemp
  * Las quito de la funcionp ara qu eno se recreen todo el tiempo
  */
@@ -11,7 +11,7 @@
 
 
 /*
- * Devuelve un float conla tenperatura en grados celcius
+ * Devuelve un float con la tenperatura en grados celcius
  */
 float getTemp(){
   
@@ -101,11 +101,6 @@ float getTemp(){
   Serial.print(fahrenheit);
   Serial.println(" Fahrenheit");
 
-
-
-
-
-  return celsius;
-  
+  return celsius; // este es el eunico dato que usa Porruino
   
   }
