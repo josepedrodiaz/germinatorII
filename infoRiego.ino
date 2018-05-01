@@ -4,16 +4,19 @@
  */
 bool infoRiego(int sensorHumedadSueloVal){
   
-  int guinios; // número de guinios que hará elled de info
+  int guinios; // número de guinios que hará el led de info
 
-  if( sensorHumedadSueloVal > 1000){
+  //Las mediciones en la maceta arrojan resultados entre 70 y 556 
+  // pero por debajo de 420 ya esta muy seca la tierra
+  
+  if( sensorHumedadSueloVal > 420){
       //no hay señal de led si esta bien regado
-    } else if ( sensorHumedadSueloVal <= 650 && sensorHumedadSueloVal >= 450 ){
-      guinios = 2;
+      digitalWrite(riegoLed, LOW); 
+    } else if ( sensorHumedadSueloVal <= 420 && sensorHumedadSueloVal >= 400 ){
+      guinios = 10;
       guiniaLed(guinios, 400, riegoLed);
-    } else if ( sensorHumedadSueloVal < 450 ){
-      guinios = 5;
-      guiniaLed(guinios, 100, riegoLed);
+    } else if ( sensorHumedadSueloVal < 400 ){
+      digitalWrite(riegoLed, HIGH); 
     }
 
       return true;

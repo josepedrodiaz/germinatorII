@@ -43,8 +43,9 @@ unsigned long ultimo_update = 0;
    Estas variables manejan los períodos del loop y se tocan siempre
    para debuggear
 */
-unsigned long periodo_update = 900000;
+unsigned long periodo_update = 60000;
 // Período de posteos a Ubidot en milisegundos 900.000 = 15 minutos
+
 //Período de delay pre y post lectura del pin ADC
 int analogReadDelay = 100;
 
@@ -61,9 +62,20 @@ int infoLed = 5; //info led
 int riegoLed = 0; //info agua led
 int deleteLed = 12; //Format info led
 
-//Botones
-int button1 = 16;//Button on GPIO16 - Manda datos.csv al Serial
-int button2 = 14;//Button on GPIO14 - FORMAT SPIFFS
+/*
+ * BOTONES
+ */
+
+/*
+ * Button on GPIO16 - Manda datos.csv al Serial
+ */
+ int button1 = 16;
+
+/*
+ * Button on GPIO14 - FORMAT SPIFFS
+ * Este botón está marcado con un cuadrado negro abajo en el protoboard (J/55 más o menos)
+ */
+int button2 = 14;
 
 /*
    Variables para formatear la memoria SPIFFS
@@ -114,7 +126,7 @@ void setup() {
   Serial.println(WiFi.localIP());           // Send the IP address of the ESP8266 to the computer
   server.on("/", handleRoot);               // Call the 'handleRoot' function when a client requests URI "/"
   server.onNotFound(handleNotFound);        // When a client requests an unknown URI (i.e. something other than "/"), call function "handleNotFound"
-  server.serveStatic("/data.csv", SPIFFS, "/data.csv"); //Apunta una URL a un archivo del sistea de archivos SPIFFS
+  server.serveStatic("/data.csv", SPIFFS, "/data.csv"); //Apunta una URL a un archivo del sistema de archivos SPIFFS
   server.begin();                           // Actually start the server
   Serial.println("HTTP server started");
 }
