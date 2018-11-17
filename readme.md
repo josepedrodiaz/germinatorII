@@ -1,5 +1,5 @@
 # GERMINATOR
-Un controlador de indoor basado en el SoC ESP8266 y desarrollado con el Arduino IDE
+Un controlador de indoor basado en el SoC ESP8266 y desarrollado en C++ con el Arduino IDE
 
 ## Synopsis
 
