@@ -12,7 +12,7 @@ Una contribución a la Internet de las Cosas desarrollada a partir del SoC ESP82
 ## Installation
 
 Es necesario configurar en el código
-* Nombres y passwords de la APs a la que se podrá conectar
+* Nombres y passwords de los APs a los que se podrá conectar el dispositivo
 * Período de actualizaciones en Ubidots
 * Claves de Dispositivo y variables en Ubidots
 
