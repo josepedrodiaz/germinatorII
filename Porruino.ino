@@ -106,7 +106,9 @@ void setup() {
 
   //Add routers/APs
   WiFiMulti.addAP("Cisco68896", "elperrococoliso"); // Router @casita
-  WiFiMulti.addAP("CeluP", "cocoliche"); // AP Mobile Pedro
+  WiFiMulti.addAP("CeluP", "cocoliso"); // AP Mobile Pedro
+  WiFiMulti.addAP("cocina", "gatolagarto"); // Router cocina
+  WiFiMulti.addAP("Dormi Nieco", "gatolagarto"); // Router Dormitorio Nieco
 
   //Start SPIFFS file system
   SPIFFS.begin();
