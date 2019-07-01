@@ -1,5 +1,5 @@
-# Porruino
-Un controlador de indoor basado en el SoC ESP8266 y desarrollado con el Arduino IDE
+# GERMINATOR
+Un controlador de indoor basado en el SoC ESP8266 y desarrollado en C++ con el Arduino IDE
 
 ## Synopsis
 
@@ -12,7 +12,7 @@ Una contribución a la Internet de las Cosas desarrollada a partir del SoC ESP82
 ## Installation
 
 Es necesario configurar en el código
-* Nombres y passwords de la APs a la que se podrá conectar
+* Nombres y passwords de los APs a los que se podrá conectar el dispositivo
 * Período de actualizaciones en Ubidots
 * Claves de Dispositivo y variables en Ubidots
 
@@ -33,5 +33,5 @@ MIT
 
 
 ## ToDo
-* Conected/Alive Led
-* Interfaz gráfica que permita configurar todo slos parametros del dispositivos como SSID/Passwd/Frecuencia de lectura de datos, umbrales de activación de leds de informe, etc
+* Que un botón dispare el posteo a ubiDots
+* Interfaz gráfica que permita configurar todos los parametros del dispositivos como SSID/Passwd/Frecuencia de lectura de datos, umbrales de activación de leds de informe, etc
