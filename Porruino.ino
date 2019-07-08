@@ -3,7 +3,7 @@
  Created on: 2017
 **/
 #include <ESP8266WiFi.h> // Basic Esp class
-#include <ESP8266WiFiMulti.h> //Save ultiple APs access Data
+#include <ESP8266WiFiMulti.h> //Save múltiple APs access Data
 #include <ESP8266HTTPClient.h>// HTTP POST json to Ubidots
 #include <FS.h> // SPIFFS class
 /* Web SERVER */
@@ -27,7 +27,7 @@ OneWire ds(ONE_WIRE_BUS);
 
 /******************** WIFI client multiple APs ************************************************/
 ESP8266WiFiMulti WiFiMulti;
-// Referencia a la librería que permite configurar multiples APs
+// Inicializa la clase que permite configurar multiples APs
 // Se conecta a la red con mayor nivel de señal
 
 
@@ -38,7 +38,7 @@ void handleNotFound();
 
 
 unsigned long ultimo_update = 0;
-//inicializa la variable que controla los millis() del ultimo posteo a ubidots
+//inicializa la variable que controla los millis() desde el ultimo posteo a ubidots
 /*
    Estas variables manejan los períodos del loop y se tocan siempre
    para debuggear
@@ -46,12 +46,12 @@ unsigned long ultimo_update = 0;
 unsigned long periodo_update = 60000;
 // Período de posteos a Ubidot en milisegundos 900.000 = 15 minutos
 
-//Período de delay pre y post lectura del pin ADC
+//Período de delay pre y post lectura del pin ADC para que no se sobrepongan las lecturas
 int analogReadDelay = 100;
 
 
 /*
-   Asignación de Pines
+******************** ASIGNACIÓN DE PINES ************************************************
 */
 int adcPin = A0; //ADC (LDR/Sensor de humedad del suelo)
 int pinSwitchLDR = 15; // El pin que activa el sensor LDR
@@ -63,8 +63,8 @@ int riegoLed = 0; //info agua led
 int deleteLed = 12; //Format info led
 
 /*
- * BOTONES
- */
+******************** BOTONES ************************************************
+*/
 
 /*
  * Button on GPIO16 - Manda datos.csv al Serial
@@ -72,13 +72,13 @@ int deleteLed = 12; //Format info led
  int button1 = 16;
 
 /*
- * Button on GPIO14 - FORMAT SPIFFS
+ * Button on GPIO14 - FORMATEA EL SISTEMA DE ARCHIVOS SPIFFS
  * Este botón está marcado con un cuadrado negro abajo en el protoboard (J/55 más o menos)
  */
 int button2 = 14;
 
 /*
-   Variables para formatear la memoria SPIFFS
+   Flag para formatear la memoria SPIFFS
 */
 
 int button2State = 0; // button to format
@@ -105,7 +105,7 @@ void setup() {
   Serial.begin(115200);
 
   //Add routers/APs
-  WiFiMulti.addAP("Cisco68896", "elperrococoliso"); // Router @casita
+  WiFiMulti.addAP("Cisco68896", "elperrococoliso"); // Router principal @casita
   WiFiMulti.addAP("CeluP", "cocoliso"); // AP Mobile Pedro
   WiFiMulti.addAP("cocina", "gatolagarto"); // Router cocina
   WiFiMulti.addAP("Dormi Nieco", "gatolagarto"); // Router Dormitorio Nieco
@@ -250,7 +250,7 @@ void loop() {
 
 
       int content_lenght = postValues.length();
-      //cuenta el total de caracteres del String del POST para enviarlo com ocontenido del Header
+      //cuenta el total de caracteres del String del POST para enviarlo como contenido del Header
 
 
       /******************** Ubidots Device Post ************************************************/
