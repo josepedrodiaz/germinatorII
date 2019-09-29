@@ -43,7 +43,7 @@ unsigned long ultimo_update = 0;
    Estas variables manejan los períodos del loop y se tocan siempre
    para debuggear
 */
-unsigned long periodo_update = 60000;
+unsigned long periodo_update = 5000;
 // Período de posteos a Ubidot en milisegundos 900.000 = 15 minutos
 
 //Período de delay pre y post lectura del pin ADC para que no se sobrepongan las lecturas
@@ -54,13 +54,13 @@ int analogReadDelay = 100;
 ******************** ASIGNACIÓN DE PINES ************************************************
 */
 int adcPin = A0; //ADC (LDR/Sensor de humedad del suelo)
-int pinSwitchLDR = 15; // El pin que activa el sensor LDR
-int pinSwitchSensorHumedadSuelo = 13; // El pin que activa el sensor de humedad en suelo
+int pinSwitchLDR = 6; // El pin que activa el sensor LDR
+int pinSwitchSensorHumedadSuelo = 3; // El pin que activa el sensor de humedad en suelo
 
 // LEDs
 int infoLed = 5; //info led
 int riegoLed = 0; //info agua led
-int deleteLed = 12; //Format info led
+int deleteLed = 1; //Format info led
 
 /*
 ******************** BOTONES ************************************************
@@ -69,13 +69,13 @@ int deleteLed = 12; //Format info led
 /*
  * Button on GPIO16 - Manda datos.csv al Serial
  */
- int button1 = 16;
+ int button1 = 7;
 
 /*
  * Button on GPIO14 - FORMATEA EL SISTEMA DE ARCHIVOS SPIFFS
  * Este botón está marcado con un cuadrado negro abajo en el protoboard (J/55 más o menos)
  */
-int button2 = 14;
+int button2 = 4;
 
 /*
    Flag para formatear la memoria SPIFFS
@@ -103,6 +103,8 @@ void setup() {
 
   //Start Serial
   Serial.begin(115200);
+
+  Serial.print("OKOKOKOKOKOKOKOKOKOKOKOKOKOKOK OK ");
 
   //Add routers/APs
   WiFiMulti.addAP("Cisco68896", "elperrococoliso"); // Router principal @casita
