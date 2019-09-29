@@ -2,25 +2,25 @@
  GerminatorII for NodeMCU  based on Porruino <josepedrodiaz@gmail.com>
  Created on: 2019
 **/
-// #include <ESP8266WiFi.h> // Basic Esp class
-// #include <ESP8266HTTPClient.h>// HTTP POST json to Ubidots
-// #include <FS.h> // SPIFFS class - Support for ESP file system
-// /* Web SERVER */
-// #include <WiFiClient.h>
-// #include <ESP8266WebServer.h>   // Include the WebServer library
+#include <ESP8266WiFi.h> // Basic Esp class
+#include <ESP8266HTTPClient.h>// HTTP POST json to Ubidots
+#include <FS.h> // SPIFFS class - Support for ESP file system
+/* Web SERVER */
+#include <WiFiClient.h>
+#include <ESP8266WebServer.h>   // Include the WebServer library
 
-// /******************** ONE WIRE DS18b20************************************************/
-// // First we include the libraries
-// #include <OneWire.h>
-// #include <DallasTemperature.h>
-// /********************************************************************/
-// // Data wire is plugged into pin 2 on the ESP
-// #define ONE_WIRE_BUS 2
-// /********************************************************************/
-// // Setup a oneWire instance to communicate with any OneWire devices
-// // (not just Maxim/Dallas temperature ICs)
-// OneWire ds(ONE_WIRE_BUS);
-// /********************************************************************/
+/******************** ONE WIRE DS18b20************************************************/
+// First we include the libraries
+#include <OneWire.h>
+#include <DallasTemperature.h>
+/********************************************************************/
+// Data wire is plugged into pin 2 on the ESP
+#define ONE_WIRE_BUS D2
+/********************************************************************/
+// Setup a oneWire instance to communicate with any OneWire devices
+// (not just Maxim/Dallas temperature ICs)
+OneWire ds(ONE_WIRE_BUS);
+/********************************************************************/
 
 
 
@@ -103,8 +103,8 @@ void setup() {
 
 
 //   //Start SPIFFS file system
-//   SPIFFS.begin();
-//   Serial.print("SPIFSS is initialized");
+  SPIFFS.begin();
+  Serial.print("SPIFSS is initialized");
 
 }
 
