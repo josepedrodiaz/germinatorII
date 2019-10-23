@@ -1,3 +1,3 @@
 # germinatorII
 
-Porruino indoor tracking system for NodeMCU
+Indoor tracking system for NodeMCU
