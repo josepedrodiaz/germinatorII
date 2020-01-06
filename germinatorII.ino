@@ -1,5 +1,5 @@
 /**
- GerminatorII for NodeMCU  based on Porruino <josepedrodiaz@gmail.com>
+ GerminatorII for NodeMCU  based on Xruino <josepedrodiaz@gmail.com>
  Created on: 2019
 **/
 #include <ESP8266WiFi.h> // Basic Esp class
